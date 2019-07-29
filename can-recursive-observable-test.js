@@ -1,9 +1,9 @@
-const Greedy = require("./can-hungry");
+const RecursiveObservable = require("./can-recursive-observable");
 const canReflect = require("can-reflect");
 const DefineObject = require("can-define-object");
 const QUnit = require("steal-qunit");
 
-QUnit.module("can-hungry");
+QUnit.module("can-recursive-observable");
 
 QUnit.test("Can convert deep objects", function(assert) {
 	var out = canReflect.convert({
@@ -15,7 +15,7 @@ QUnit.test("Can convert deep objects", function(assert) {
 		array: [
 			{one: "two"}
 		]
-	}, Greedy);
+	}, RecursiveObservable);
 
 	assert.ok(canReflect.isObservableLike(out), "is an observable");
 	assert.ok(canReflect.isObservableLike(out.inner), "inner object is observable");
@@ -28,7 +28,7 @@ QUnit.test("Can be used as a type with DefineObject", function(assert) {
 	class Faves extends DefineObject {
 		static get define() {
 			return {
-				person: Greedy
+				person: RecursiveObservable
 			};
 		}
 	}

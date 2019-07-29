@@ -1,11 +1,11 @@
 {
-  "name": "can-hungry",
+  "name": "can-recursive-observable",
   "version": "0.0.0",
   "description": "",
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": "git://github.com/canjs/can-hungry.git"
+    "url": "git://github.com/canjs/can-recursive-observable.git"
   },
   "author": {
     "name": "DoneJS Contributors",
@@ -25,7 +25,7 @@
     "build": "node build.js",
     "develop": "done-serve --static --develop --port 8080"
   },
-  "main": "can-hungry",
+  "main": "can-recursive-observable.js",
   "keywords": [
     "canjs",
     "donejs-plugin"
