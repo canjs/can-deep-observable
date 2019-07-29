@@ -4,3 +4,5 @@ services:
   - xvfb
 addons:
   firefox: latest
+script: npm test
+dist: xenial
