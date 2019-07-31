@@ -1,11 +1,11 @@
 {
-  "name": "can-recursive-observable",
+  "name": "can-deep-observable",
   "version": "0.1.0",
   "description": "",
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": "git://github.com/canjs/can-recursive-observable.git"
+    "url": "git://github.com/canjs/can-deep-observable.git"
   },
   "author": {
     "name": "DoneJS Contributors",
@@ -13,7 +13,7 @@
     "url": "https://donejs.com/"
   },
   "scripts": {
-    "preversion": "npm test && npm run build",
+    "preversion": "npm test",
     "version": "git commit -am \"Update version number\" && git checkout -b release && git add -f dist/",
     "postpublish": "git push --tags && git checkout master && git branch -D release && git push",
     "testee": "testee test.html --browsers firefox",
@@ -22,10 +22,9 @@
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
-    "build": "node build.js",
     "develop": "done-serve --static --develop --port 8080"
   },
-  "main": "can-recursive-observable.js",
+  "main": "can-deep-observable.js",
   "keywords": [
     "canjs",
     "donejs-plugin"
@@ -41,9 +40,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "can-define-array": "^0.4.14",
-    "can-define-object": "^0.1.5",
+    "can-observable-array": "^0.7.0",
+    "can-observable-object": "^0.2.0",
     "can-reflect": "^1.17.11",
-    "can-type": "^0.1.10"
+    "can-type": "^0.2.0"
   }
 }

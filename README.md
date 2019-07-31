@@ -1,6 +1,6 @@
-# can-recursive-observable
+# can-deep-observable
 
-[![Build Status](https://travis-ci.org//can-recursive-observable.svg?branch=master)](https://travis-ci.org//can-recursive-observable)
+[![Build Status](https://travis-ci.org/canjs/can-deep-observable.svg?branch=master)](https://travis-ci.org/canjs/can-deep-observable)
 
 
 
@@ -11,16 +11,16 @@
 With StealJS, you can import this module directly in a template that is autorendered:
 
 ```js
-import plugin from 'can-recursive-observable';
+import plugin from 'can-deep-observable';
 ```
 
 ### CommonJS use
 
-Use `require` to load `can-recursive-observable` and everything else
-needed to create a template that uses `can-recursive-observable`:
+Use `require` to load `can-deep-observable` and everything else
+needed to create a template that uses `can-deep-observable`:
 
 ```js
-var plugin = require("can-recursive-observable");
+var plugin = require("can-deep-observable");
 ```
 
 ### Standalone use
@@ -28,5 +28,5 @@ var plugin = require("can-recursive-observable");
 Load the `global` version of the plugin:
 
 ```html
-<script src='./node_modules/can-recursive-observable/dist/global/can-recursive-observable.js'></script>
+<script src='./node_modules/can-deep-observable/dist/global/can-deep-observable.js'></script>
 ```
