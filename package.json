@@ -14,15 +14,14 @@
   },
   "scripts": {
     "preversion": "npm test",
-    "version": "git commit -am \"Update version number\" && git checkout -b release && git add -f dist/",
-    "postpublish": "git push --tags && git checkout master && git branch -D release && git push",
+    "version": "git commit -am \"Update version number\"",
+    "postpublish": "git push --tags && git checkout master && git push",
     "testee": "testee test.html --browsers firefox",
     "test": "npm run jshint && npm run testee",
     "jshint": "jshint ./*.js --config",
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
-    "release:major": "npm version major && npm publish",
-    "develop": "done-serve --static --develop --port 8080"
+    "release:major": "npm version major && npm publish"
   },
   "main": "can-deep-observable.js",
   "keywords": [
