@@ -1,10 +1,10 @@
-const RecursiveObservable = require("./can-recursive-observable");
+const DeepObservable = require("./can-deep-observable");
 const canReflect = require("can-reflect");
-const DefineObject = require("can-define-object");
+const ObservableObject = require("can-observable-object");
 const Observation = require("can-observation");
 const QUnit = require("steal-qunit");
 
-QUnit.module("can-recursive-observable");
+QUnit.module("can-deep-observable");
 
 QUnit.test("Can convert deep objects", function(assert) {
 	var out = canReflect.convert({
@@ -16,7 +16,7 @@ QUnit.test("Can convert deep objects", function(assert) {
 		array: [
 			{one: "two"}
 		]
-	}, RecursiveObservable);
+	}, DeepObservable);
 
 	assert.ok(canReflect.isObservableLike(out), "is an observable");
 	assert.ok(canReflect.isObservableLike(out.inner), "inner object is observable");
@@ -25,11 +25,11 @@ QUnit.test("Can convert deep objects", function(assert) {
 	assert.ok(Array.isArray(out.array), "array is still an array");
 });
 
-QUnit.test("Can be used as a type with DefineObject", function(assert) {
-	class Faves extends DefineObject {
-		static get define() {
+QUnit.test("Can be used as a type with ObservableObject", function(assert) {
+	class Faves extends ObservableObject {
+		static get props() {
 			return {
-				person: RecursiveObservable
+				person: DeepObservable
 			};
 		}
 	}
@@ -47,8 +47,8 @@ QUnit.test("Can be used as a type with DefineObject", function(assert) {
 	assert.ok(faves.person.birthday instanceof Date, "dates left alone");
 });
 
-QUnit.test("new RecursiveObservable creates a nested observable", function(assert) {
-	let obj = new RecursiveObservable({
+QUnit.test("canReflect.new DeepObservable creates a nested observable", function(assert) {
+	let obj = canReflect.new(DeepObservable, {
 		prop: "A",
 		nested: {
 			prop: "A"
@@ -67,7 +67,7 @@ QUnit.test("new RecursiveObservable creates a nested observable", function(asser
 });
 
 QUnit.test(".on works", function(assert) {
-	let obj = new RecursiveObservable({
+	let obj = canReflect.new(DeepObservable, {
 		inner: {
 			prop: "A"
 		}
