@@ -39,9 +39,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "can-observable-array": "^1.0.0-pre.2",
-    "can-observable-object": "^1.0.0-pre.2",
+    "can-observable-array": "^1.0.0",
+    "can-observable-object": "^1.0.0",
     "can-reflect": "^1.17.11",
-    "can-type": "^1.0.0-pre.2"
+    "can-type": "^1.0.0"
   }
 }
