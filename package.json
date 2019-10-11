@@ -39,6 +39,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "can-namespace": "^1.0.0",
     "can-observable-array": "^1.0.0",
     "can-observable-object": "^1.0.0",
     "can-reflect": "^1.17.11",

@@ -1,5 +1,6 @@
 const ObservableArray = require("can-observable-array");
 const ObservableObject = require("can-observable-object");
+const namespace = require("can-namespace");
 const canReflect = require("can-reflect");
 const type = require("can-type");
 
@@ -34,4 +35,4 @@ canReflect.assignSymbols(DeepObservable, {
 	}
 });
 
-module.exports = type.maybeConvert(DeepObservable);
+module.exports = namespace.DeepObservable = type.maybeConvert(DeepObservable);
