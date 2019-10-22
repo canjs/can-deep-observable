@@ -79,3 +79,7 @@ QUnit.test(".on works", function(assert) {
 
 	obj.inner.prop = "B";
 });
+
+QUnit.test("is a constructor function", function(assert) {
+	assert.ok(new DeepObservable({}));
+});
