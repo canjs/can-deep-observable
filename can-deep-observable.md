@@ -8,14 +8,14 @@
 
 @description Create observable objects where nested objects and arrays are also observable.
 
-@signature `new DeepObservable(data)`
+@signature `canReflect.new(DeepObservable, data)`
 
 Creates an observable object with `data`, where inner objects and arrays are converted to [can-observable-object] and [can-observable-array] types.
 
 ```js
-import { DeepObservable } from "can";
+import { DeepObservable, Reflect as canReflect } from "can";
 
-let obj = new DeepObservable({
+let obj = canReflect.new(DeepObservable, {
   inner: {
     prop: "value"
   }
